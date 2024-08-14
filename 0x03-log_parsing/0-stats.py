@@ -54,19 +54,20 @@ def signal_handler(sig, frame):
     print_stats()
     sys.exit(0)
 
-    # Bind the signal handler for keyboard interrupt (CTRL + C)
-    signal.signal(signal.SIGINT, signal_handler)
 
-    line_count = 0
+# Bind the signal handler for keyboard interrupt (CTRL + C)
+signal.signal(signal.SIGINT, signal_handler)
 
-    # Read from stdin line by line
-    for line in sys.stdin:
-        process_line(line.strip())
-        line_count += 1
+line_count = 0
 
-        # Print stats every 10 lines
-        if line_count % 10 == 0:
-            print_stats()
+# Read from stdin line by line
+for line in sys.stdin:
+    process_line(line.strip())
+    line_count += 1
 
-    # Print stats at the end if there are remaining lines
-    print_stats()
+    # Print stats every 10 lines
+    if line_count % 10 == 0:
+        print_stats()
+
+# Print stats at the end if there are remaining lines
+print_stats()
