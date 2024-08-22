@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def validUTF8(data):
     # Number of bytes in the current UTF-8 character
     num_bytes = 0
@@ -13,7 +14,7 @@ def validUTF8(data):
             while mask & num:
                 num_bytes += 1
                 mask = mask >> 1
-            
+
             # If num_bytes is 0, it's a 1-byte character
             if num_bytes == 0:
                 continue
