@@ -1,5 +1,11 @@
 #!/usr/bin/python3
+"""UTF-8 validation module.
+"""
+
+
 def validUTF8(data):
+    """UTF-8 validation module.
+    """
     # Number of bytes in the current UTF-8 character
     num_bytes = 0
 
